@@ -19,6 +19,9 @@ Description=Remove ~/explicit_filter.restore
 [Service]
 Restart=always
 ExecStart=/bin/sh -c '${HOME}/.local/bin/explicit_filter_remover'
+
+[Install]
+WantedBy=default.target
 ```
 
 Then you can start it with `systemctl enable --now explicit-filter-remover.service`.
